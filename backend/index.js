@@ -33,23 +33,20 @@ const storage=multer.diskStorage({
 })
 const upload=multer({storage})
 
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: (origin, callback) => {
-//       const allowedOrigins = ["http://localhost:5173"];
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//   })
-// );
-app.use(cors({
-  credentials: true,
-  origin: '*'
-}));
+app.use(
+  cors({
+    credentials: true,
+    origin: (origin, callback) => {
+      const allowedOrigins = ["http://localhost:5173","https://eggyblog.netlify.app"];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
+
 
 app.use(express.json());
 app.use(cookieParser());
