@@ -37,7 +37,6 @@ function Signup() {
       <form>
       <Typography  variant='h5'>Welcome to bloggare Signup</Typography>
       <Typography sx={{ fontSize: 14 }} color="text.secondary" >
-          email
           <br></br>
           <TextField id="outlined-basic" label="email" variant="outlined" onChange={(e)=>{
             setUsername(e.target.value);
@@ -45,7 +44,6 @@ function Signup() {
         </Typography>
       
       <Typography   color="text.secondary" gutterBottom>
-          password
           <br></br>
           <TextField  id="outlined-basic" label="password" variant="outlined" onChange={(e)=>{
             setPassword(e.target.value)
